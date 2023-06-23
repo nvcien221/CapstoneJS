@@ -1,17 +1,16 @@
-.navbar {
+.navbar{
     border-bottom: 1px solid #fff;
-  }
-  
-  .navbar-nav {
+}
+.navbar-nav{
     padding: 0 15px;
-  }
-  
-  .formSearch {
+
+}
+.formSearch{
     display: flex;
     position: relative;
     text-align: center;
     height: 35px;
-    transition: 0.3s ease;
+    transition: .3s ease;
     padding: 5px 8px;
     border: 1.1px solid #e8dfec;
     color: #464646;
@@ -19,18 +18,16 @@
     font-weight: 300;
     background: #fff;
     border-radius: 3px;
-  }
-  
-  [type=search] {
+}
+[type=search] {
     min-width: 800px;
     border: none;
-  }
-  
-  .txtSearch:focus-visible {
+}
+.txtSearch:focus-visible{
     outline: none;
-  }
-  
-  .boxIcon {
+}
+
+.boxIcon{
     position: absolute;
     right: 0;
     top: 1px;
@@ -39,23 +36,20 @@
     width: 65px;
     background: #05042c;
     border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-  }
-  
-  .boxIcon i {
+    border-bottom-right-radius: 3px
+}
+.boxIcon i{
     color: white;
-  }
-  
-  .boxCart {
+}
+.boxCart{
     padding: 0 30px 0 64px;
     position: relative;
-  }
-  
-  .showCart {
+}
+.showCart{
     position: absolute;
     top: 0;
     right: 28px;
-    transform: translate(50%, -50%);
+    transform: translate(50%,-50%);
     min-width: 20px;
     height: 20px;
     padding: 0 6px;
@@ -67,14 +61,4 @@
     background: #ff4d4f;
     border-radius: 50%;
     box-shadow: 0 0 0 1px #fff;
-  }
-  
-  .nav-link {
-    font-size: 16px;
-    color: white;
-  }
-
-.nav-link{
-    font-size: 16px;
-    color: white;
 }

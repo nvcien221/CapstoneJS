@@ -4,20 +4,239 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/image/favicon.jpg" type="image/x-icon">
     <title>Shoes Shop</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
 
 </head>
-<body>
-    <header></header>
-    <section class="carousel"></section>
-    <section class="products"></section>
-    <footer></footer>
+<body onload="indexLoadPage()">
+    <header>
+      <nav class="navbar navbar-expand-lg " style="background-color: black;">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/image/logoCybersoft.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Trang Chủ</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                Thương hiệu
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Adidas</a>
+                <a class="dropdown-item" href="#">Nike</a>
+                <a class="dropdown-item" href="#">Vans</a>
+                <a class="dropdown-item" href="#">Converse</a>
+              </div>
+            </li>
+            
+          </ul>
+          <div class="formSearch">
+            <input class="txtSearch" type="search" placeholder="Tìm sản phẩm, thương hiệu mong muốn!">
+            <div class="boxIcon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+
+
+          <div class="boxCart">
+            <img id="clickCart" src="./assets/image/cart.png" alt="">
+            <span class="showCart">0</span>
+          </div>
+          
+          <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Đăng nhập</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <div class="modal-cart">
+      <div class="modal-cart-content">
+        <span class="close"><i class="fa-solid fa-xmark"></i></span>
+        <div class="wrap-cart-content">
+          <div class="list-items" id="showCart">
+
+          </div>
+          <div class="cart-content-bot">
+            <div class="sub-total">
+              <p style="font-size: 30px;">Tạm tính: <span id="totalPrice" style="margin-right: 10px;"></span>$</p>
+            </div>
+            <div class="gr-button">
+              <a href="#list-product" class="hide" onclick="continueShopping()" style="transition-duration: 2s;">
+                <button >Tiếp tục mua hàng</button>
+              </a>
+              <a href="#" class="hide">
+                <button>Thanh toán</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="demoItem">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/image/slider_01.jpg" class="d-block w-100" alt="...">
+              <div class="content-slider">
+                  <h2 class="text-silder">SHOES SHOP</h2>
+                  <img style="margin: 0 0 10px;" src="./assets/image/decor.png" alt="">
+                  <p class="text-description"> Khám phá thế giới với những bước di chuyển tốt hơn</p>
+                  <button class="btn-slider">SHOP HERE</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/image/slider_02.jpg" class="d-block w-100" alt="...">
+              <div class="content-slider">
+                  <h2 class="text-silder">SHOES SHOP</h2>
+                  <img style="margin: 0 0 10px;" src="./assets/image/decor.png" alt="">
+                  <p class="text-description"> Khám phá thế giới với những bước di chuyển tốt hơn</p>
+                  <button class="btn-slider">SHOP HERE</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/image/slider_01.jpg" class="d-block w-100" alt="...">
+              <div class="content-slider">
+                  <h2 class="text-silder">SHOES SHOP</h2>
+                  <img style="margin: 0 0 10px;" src="./assets/image/decor.png" alt="">
+                  <p class="text-description"> Khám phá thế giới với những bước di chuyển tốt hơn</p>
+                  <button class="btn-slider">SHOP HERE</button>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </button>
+      </div>
+  </section>
+
+  <section>
+    <div class="d-flex justify-content-between mt-4 container">
+      <!-- Categology  -->
+            <ul class="nav nav-pills mb-3" id="category-tab" role="tablist">
+            </ul>
+      <!-- Oder  -->
+      <ul class="nav nav-pills mb-3" id="order-tab" role="tablist">
+            <li class="nav-item mr-2" >
+              <button onclick="getListShoeBuyPriceD()" style=" background: linear-gradient(to right, #227df9, #7462f9, #df3ef8);"
+              class="nav-link active" id="order-home-tab" data-bs-toggle="pill" data-bs-target="#order-home" type="button" >
+                  <span>
+                        Price
+                    </span>
+                    <i class="fa-solid fa-arrow-down"></i>
+              </button>
+              
+            </li>
+            <li class="nav-item" >
+              <button onclick="getListShoeBuyPriceU()" style="background: linear-gradient(to right, #227df9, #7462f9, #df3ef8);""
+              class="nav-link active" id="order-profile-tab" data-bs-toggle="pill" data-bs-target="#order-profile" type="button" >
+                  <span>
+                        Price
+                    </span>
+                    <i class="fa-solid fa-arrow-up"></i>
+              </button>
+              
+            </li>
+      </ul>
+
+</div>
+  </section>
+
+  <section class="featured-product bg-section">
+    <div class="container-md margin-top-40 margin-bot-40">
+      <p class="section-tittle text-center m-auto">
+        Featured products
+      </p>
+      <div class="row margin-top-40 g-3" id="list-product">
+    
+      </div>
+    </div>
+  </section>
+
+    <footer>
+      <div class="page-footer">
+        <footer class="footer-distributed">
+          <div class="footer-left">
+            <h3>SHOES SHOP</h3>
+    
+            <p class="footer-links">
+              <a href="index.html" class="link-1">Home</a>
+              
+              <a href="#">Products</a>
+
+              <a href="#">Contact Us</a>
+
+            </p>
+    
+            <p class="footer-company-name">
+              Open hour : 07:30 am - 10:00 pm/ Monday - Sunday
+            </p>
+          </div>
+    
+          <div class="footer-center">
+            <div>
+              <i class="fa-solid fa-location-dot"></i>
+              <p><span>Viwaseen Tower</span> 48 Tố Hữu, quận Nam Từ Liêm, Hà Nội</p>
+            </div>
+    
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>(+84)66.771.508/+0.222.889.888</p>
+            </div>
+    
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p><a href="mailto:support@company.com">shoseShopMaiDinh@gmail.com</a></p>
+            </div>
+          </div>
+    
+          <div class="footer-right">
+            <p class="footer-company-about">
+              <span>About the Shoes Shop</span>
+              Khám phá thế giới với những bước di chuyển tốt hơn.
+            </p>
+    
+            <div class="footer-icons">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+
+  <script src="./model/Product.js"></script>
+  <script src="./controller/main.js"></script>
+  <script src="./model/renderCategory.js"></script>
+
 </body>
 </html>
