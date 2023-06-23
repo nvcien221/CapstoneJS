@@ -79,6 +79,33 @@ html, body {
   box-shadow: 0 0 0 1px #fff;
 }
 
+.backtotop {
+  display: block;
+  text-align: center;
+  width: 50px;
+  height: 45px;
+  border-radius: 4px;
+  background: #be9c79;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 99;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+
+.backtotop .fa-solid {
+  color: #fff;
+  line-height: 45px;
+  font-size: 22px;
+}
+
+.cd-top--is-visible {
+  opacity: 0.7;
+}
+
 .navbar {
   border-bottom: 1px solid #fff;
 }
